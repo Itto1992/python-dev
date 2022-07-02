@@ -8,7 +8,6 @@ services:
     volumes:
       - $WORK_DIR:/root/workspace
       - $SSH_AUTH_SOCK:/ssh-agent
-      - ./.config:/root/.config
       - ./.gitconfig:/root/.gitconfig
       - ./.tmux.conf:/root/.tmux.conf
       - ./.zsh_aliases:/root/.zsh_aliases
