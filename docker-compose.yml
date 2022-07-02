@@ -1,0 +1,21 @@
+version: '2.3'
+services:
+  dev:
+    build:
+      context: .
+    image: python-dev
+    command: /bin/zsh
+    volumes:
+      - $WORK_DIR:/root/workspace
+      - $SSH_AUTH_SOCK:/ssh-agent
+      - ./.config:/root/.config
+      - ./.gitconfig:/root/.gitconfig
+      - ./.tmux.conf:/root/.tmux.conf
+      - ./.zsh_aliases:/root/.zsh_aliases
+      - ./.zshrc:/root/.zshrc
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+    env_file:
+      - .env
+    working_dir: /root/workspace
+    shm_size: 8g

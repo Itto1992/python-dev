@@ -1,0 +1,90 @@
+# you have to write the repositories you want to install
+# reference
+# https://qiita.com/sugamondo/items/fcaf210ca86d65bcaca8
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+#if there are somethings to do after git clone, write as bellow
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+ source ~/.config/nvim/plugins/vimproc.vim
+'''
+
+#if you want to designate a branch or a tag
+[[plugins]]
+repo = 'delphinus35/typescript-vim'
+rev  = 'colorize-template-strings'
+
+#if you want to load with some conditions
+[[plugins]]
+repo = 'elzr/vim-json'
+if   = '''! has('kaoriya')'''
+
+#if you want to designate dependencies
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+
+#after designate dependencies, you have to install the depended repositories
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# nerdtree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# git settings
+# vim-gitgutter tells you the difference between current state and HEAD.
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# vim-fugitive enables you to use git command in vim.
+# :Glog -> git log
+# :Gdiff -> git diff
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# close a bracket automatically
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+hook_add = '''
+  colorscheme onedark
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+  let g:lsp_log_verbose = 1
+  let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')
+  let g:lsp_diagnostics_enabled = 0
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = '''
+  let g:auto_save = 1
+  let g:auto_save_in_insert_mode = 0
+  let g:auto_save_no_updatetime = 1
+'''
+
+# tcomment_vim (easy comment out)
+# gcc: comment out or comment in the current line
+# g>c: comment out the current line
+# g<c: comment in the current line
+# gc (V mode): comment out the selected lines
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
