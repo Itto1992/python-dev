@@ -4,3 +4,6 @@
 
 [core]
         editor = vim -c \"set fenc=utf-8\"
+
+[safe]
+        directory = *
