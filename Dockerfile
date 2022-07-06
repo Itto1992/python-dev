@@ -207,6 +207,10 @@ RUN apt update -y \
     && ./squashfs-root/AppRun --version \
     && ln -s /squashfs-root/AppRun /usr/bin/nvim
 
+# install pip packages
+COPY requirements.txt /root/requirements.txt
+RUN pip install -r /root/requirements.txt
+
 # copy setting files and load them
 COPY .config /root/.config
 RUN nvim +q

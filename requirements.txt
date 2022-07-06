@@ -1,0 +1,7 @@
+# syntax
+autopep8
+flake8
+flake8-commas
+flake8-isort
+flake8-quotes
+pep8-naming
