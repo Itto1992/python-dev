@@ -65,6 +65,23 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/vim-lsp-settings'
+hook_add = '''
+  nnoremap <expr> <silent> <C-]> execute(':LspDefinition') =~ "not supported" ? "\<C-]>" : ":echo<cr>"
+'''
+hook_post_update = '''
+  let g:lsp_settings = {
+  \   'pylsp-all': {
+  \     'workspace_config': {
+  \       'pylsp': {
+  \         'configurationSources': ['flake8']
+  \       }
+  \     }
+  \   },
+  \}
+'''
+
+[[plugins]]
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]

@@ -6,8 +6,8 @@ services:
     image: python-dev
     command: /bin/zsh
     volumes:
-      - $WORK_DIR:/root/workspace
-      - $SSH_AUTH_SOCK:/ssh-agent
+      - $WORK_DIR/:/root/workspace
+      - $SSH_AUTH_SOCK/:/ssh-agent
       - ./.gitconfig:/root/.gitconfig
       - ./.tmux.conf:/root/.tmux.conf
       - ./.zsh_aliases:/root/.zsh_aliases

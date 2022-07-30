@@ -55,6 +55,7 @@ augroup fileTypeIndent
     source ~/.config/nvim/autocmds/fileTypeIndent/cpp.vim
     source ~/.config/nvim/autocmds/fileTypeIndent/vim.vim
     source ~/.config/nvim/autocmds/fileTypeIndent/toml.vim 
+    source ~/.config/nvim/autocmds/fileTypeIndent/yaml.vim 
 augroup END
 
 "search settings
@@ -82,12 +83,6 @@ vnoremap v $h
 "jump to the corresponding pair with tab
 nnoremap <Tab> %
 vnoremap <Tab> %
-
-"move next window without w
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 "cursor settings
 set whichwrap=b,s,h,l,<,>,[,],~
@@ -189,37 +184,6 @@ nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gr :Grebase -i<CR>
 nnoremap <leader>gg :Ggrep 
 nnoremap <leader>gm :Gmerge 
-
-"LSP settings
-"copy from https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#vim
-augroup MyLsp
-  autocmd!
-  if executable('pyls')
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': { server_info -> ['pyls'] },
-        \ 'whitelist': ['python'],
-        \ 'workspace_config': {'pyls': {'plugins': {
-        \   'pycodestyle': {'enabled': v:false},
-        \   'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},}}}
-        \})
-    autocmd FileType python call s:configure_lsp()
-  endif
-augroup END
-
-function! s:configure_lsp() abort
-  setlocal omnifunc=lsp#complete
-  nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
-  nnoremap <buffer> gd :<C-u>LspDefinition<CR>
-  nnoremap <buffer> gD :<C-u>LspReferences<CR>
-  nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
-  nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
-  nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
-  vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
-  nnoremap <buffer> K :<C-u>LspHover<CR>
-  nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
-  nnoremap <buffer> <F2> :<C-u>LspRename<CR>
-endfunction
 
 "py-docstring
 nnoremap <silent> <C-_> <Plug>(pydocstring)

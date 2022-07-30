@@ -211,13 +211,13 @@ RUN apt update -y \
 COPY requirements.txt /root/requirements.txt
 RUN pip install -r /root/requirements.txt
 
-# copy setting files and load them
-COPY .config /root/.config
-RUN nvim +q
-
 # for lsp log
 RUN mkdir /root/.cache/tmp
 
 # copy ssh information
 RUN mkdir -m 700 $HOME/.ssh \
     && ssh-keyscan github.com > $HOME/.ssh/known_hosts
+
+# copy setting files and load them
+COPY .config /root/.config
+RUN nvim +q
