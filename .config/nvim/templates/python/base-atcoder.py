@@ -8,7 +8,7 @@ input = sys.stdin.readline
 
 
 def main():
-    N = int(input())
+    {{_cursor_}}N = int(input())
     A = map(int, input().split())
 
     ret = 0
