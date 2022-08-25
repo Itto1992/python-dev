@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 # install python
 # https://github.com/docker-library/python/blob/764e8faa0f208ab3eed2cd32dbb03e95fe204ff5/3.7/slim-bullseye/Dockerfile#L9-L192
@@ -221,3 +221,7 @@ RUN mkdir -m 700 $HOME/.ssh \
 # copy setting files and load them
 COPY .config /root/.config
 RUN nvim +q
+
+# imgcat
+COPY imgcat /usr/local/bin/imgcat
+RUN chmod +x /usr/local/bin/imgcat
