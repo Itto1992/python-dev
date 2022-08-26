@@ -206,6 +206,6 @@ endif
 "Move to normal mode by esc key
 :tnoremap <Esc> <C-\><C-n>
 "Open terminal (zsh) at the bottom by :T
-command! T split | wincmd j | resize 20 | terminal zsh
+command! T split | wincmd j | resize 10 | terminal zsh
 "Open terminal with insert mode (by default, open terminal with normal mode)
 autocmd TermOpen * startinsert
