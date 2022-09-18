@@ -209,3 +209,6 @@ endif
 command! T split | wincmd j | resize 10 | terminal zsh
 "Open terminal with insert mode (by default, open terminal with normal mode)
 autocmd TermOpen * startinsert
+
+"sonictemplate
+:command Tem Template
