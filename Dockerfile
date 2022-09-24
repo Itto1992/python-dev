@@ -205,7 +205,10 @@ RUN apt update -y \
     && chmod u+x nvim.appimage \
     && ./nvim.appimage --appimage-extract \
     && ./squashfs-root/AppRun --version \
-    && ln -s /squashfs-root/AppRun /usr/bin/nvim
+    && ln -s /squashfs-root/AppRun /usr/bin/nvim \
+    && echo 'export "XDG_CONFIG_HOME=$HOME/.config"' >> $HOME/.zshrc \
+    && echo 'alias vim="nvim"' >> $HOME/.zshrc \
+    && echo 'alias vi="nvim"' >> $HOME/.zshrc
 
 # install pip packages
 COPY requirements.txt /root/requirements.txt
@@ -219,9 +222,12 @@ RUN mkdir -m 700 $HOME/.ssh \
     && ssh-keyscan github.com > $HOME/.ssh/known_hosts
 
 # copy setting files and load them
-COPY .config /root/.config
+COPY .config $HOME/.config
 RUN nvim +q
 
 # imgcat
 COPY imgcat /usr/local/bin/imgcat
 RUN chmod +x /usr/local/bin/imgcat
+
+# .gitconfig
+COPY .gitconfig $HOME/.gitconfig
