@@ -210,3 +210,15 @@ endif
 command! T split | wincmd j | resize 10 | terminal zsh
 "Open terminal with insert mode (by default, open terminal with normal mode)
 autocmd TermOpen * startinsert
+
+"Create intermediate directories
+augroup vimrc-auto-mkdir
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'))
+  
+  function! s:auto_mkdir(dir)
+    if !isdirectory(a:dir)
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
+augroup END
