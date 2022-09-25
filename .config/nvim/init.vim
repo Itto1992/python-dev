@@ -56,6 +56,7 @@ augroup fileTypeIndent
     source ~/.config/nvim/autocmds/fileTypeIndent/vim.vim
     source ~/.config/nvim/autocmds/fileTypeIndent/toml.vim 
     source ~/.config/nvim/autocmds/fileTypeIndent/yaml.vim 
+    source ~/.config/nvim/autocmds/fileTypeIndent/html.vim 
 augroup END
 
 "search settings
