@@ -199,8 +199,11 @@ CMD ["zsh"]
 
 # install neovim
 # https://github.com/neovim/neovim/wiki/Installing-Neovim#appimage-universal-linux-package
+# npm will used for vim-lsp
 RUN apt update -y \
-    && apt install -y curl \
+    && apt install -y \
+    curl \
+    npm \
     && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage \
     && chmod u+x nvim.appimage \
     && ./nvim.appimage --appimage-extract \
@@ -221,13 +224,10 @@ RUN mkdir /root/.cache/tmp
 RUN mkdir -m 700 $HOME/.ssh \
     && ssh-keyscan github.com > $HOME/.ssh/known_hosts
 
-# copy setting files and load them
-COPY .config $HOME/.config
-RUN nvim +q
-
 # imgcat
 COPY imgcat /usr/local/bin/imgcat
 RUN chmod +x /usr/local/bin/imgcat
 
-# .gitconfig
-COPY .gitconfig $HOME/.gitconfig
+# copy setting files and load them
+COPY .config $HOME/.config
+RUN nvim +q
