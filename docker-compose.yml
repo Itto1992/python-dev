@@ -3,11 +3,12 @@ services:
   dev:
     build:
       context: .
-    image: dev
+    image: simossyi/dev:neovim
     command: /bin/zsh
     volumes:
       - $WORK_DIR/:/root/workspace
       - $SSH_AUTH_SOCK/:/ssh-agent
+      - .gitconfig:$HOME/.gitconfig
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     env_file:

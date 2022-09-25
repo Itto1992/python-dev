@@ -2,7 +2,7 @@
 This is a repository to provide neovim+python codeing environment.
 
 More concretely,
-- ubuntu22.04
+- ubuntu20.04
 - neovim
     - with python-related plugins
 - python3.7.13
@@ -20,6 +20,7 @@ SSH_AUTH_SOCK=/ssh-agent
 2. Build docker image
 
 ```
+IMAGE_TAG=simossyi/dev:neovim
 docker build -t ${IMAGE_TAG} . 
 ```
 
