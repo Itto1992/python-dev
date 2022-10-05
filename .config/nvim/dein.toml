@@ -118,3 +118,6 @@ hook_add = '''
 # <C-y>k : delete tag
 [[plugins]]
 repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
