@@ -8,7 +8,7 @@ services:
     volumes:
       - $WORK_DIR/:/root/workspace
       - $SSH_AUTH_SOCK/:/ssh-agent
-      - .gitconfig:$HOME/.gitconfig
+      - .gitconfig:/root/.gitconfig
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     env_file:
