@@ -119,5 +119,7 @@ hook_add = '''
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
+# surround word/line with '/"/()/{}/[] etc.
+# how to use: https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56
 [[plugins]]
 repo = 'tpope/vim-surround'
