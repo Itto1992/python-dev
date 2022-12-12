@@ -174,19 +174,15 @@ inoremap <silent> jj <ESC>
 set updatetime=100
 " keymaps of vim-fugitive
 let mapleader = "\<Space>"
-nnoremap <leader>gs :tab sp<CR>:Gstatus<CR>:only<CR>
-nnoremap <leader>ga :Gwrite<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gl :Git log<CR>
-nnoremap <leader>gh :tab sp<CR>:0Glog<CR>
-" abbrev for `git history`: create new quickfix tab for history
-nnoremap <leader>gp :Gpush<CR>
-nnoremap <leader>gf :Gfetch<CR>
-nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gr :Grebase -i<CR>
-nnoremap <leader>gg :Ggrep 
-nnoremap <leader>gm :Gmerge 
+nnoremap <leader>gst :tab :G status<CR>
+nnoremap <leader>ga :G add
+nnoremap <leader>gc :G commit<CR>
+nnoremap <leader>gl :tab :Git log<CR>
+nnoremap <leader>glo :tab :Git log --oneline<CR>
+nnoremap <leader>gp :G push
+nnoremap <leader>gr :G rebase -i
+nnoremap <leader>gm :G merge
+nnoremap <leader>gd :tab :G diff<CR>
 
 "py-docstring
 nnoremap <silent> <C-_> <Plug>(pydocstring)
