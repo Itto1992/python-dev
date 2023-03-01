@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND noninteractive
 
 # install python
 # https://github.com/docker-library/python/blob/764e8faa0f208ab3eed2cd32dbb03e95fe204ff5/3.7/slim-bullseye/Dockerfile#L9-L192
@@ -234,3 +235,13 @@ COPY .zshrc $HOME/.zshrc_tmp
 RUN cat $HOME/.zshrc_tmp >> $HOME/.zshrc \
     && source $HOME/.zshrc \
     && rm $HOME/.zshrc_tmp
+
+# install go for chatGPT-cli
+# go version is the current latest version
+ENV GO_TAR_FILE go1.20.1.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/${GO_TAR_FILE} && \
+    tar -C /usr/local -xzf ${GO_TAR_FILE} && \
+    rm ${GO_TAR_FILE}
+
+RUN export PATH=$PATH:/usr/local/go/bin:/root/go/bin && \
+    go install github.com/mattn/chatgpt@latest
