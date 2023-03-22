@@ -43,3 +43,11 @@ hook_add = '''
     \ 'javascriptreact': 'jsxRegion',
     \ }
 '''
+
+# make rows into a list
+# ul>li* : create list
+# <C-y>d : select tag
+# <C-y>k : delete tag
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'xhtml', 'phtml']

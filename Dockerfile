@@ -228,7 +228,6 @@ RUN chmod +x /usr/local/bin/imgcat
 
 # copy setting files and load them
 COPY .config $HOME/.config
-# RUN nvim +q
 
 # Concat .zshrcs
 COPY .zshrc $HOME/.zshrc_tmp
@@ -245,3 +244,5 @@ RUN wget https://go.dev/dl/${GO_TAR_FILE} && \
 
 RUN export PATH=$PATH:/usr/local/go/bin:/root/go/bin && \
     go install github.com/mattn/chatgpt@latest
+
+# RUN nvim +qa!

@@ -12,11 +12,6 @@ hook_post_update = '''
  source ~/.config/nvim/plugins/vimproc.vim
 '''
 
-#if you want to designate a branch or a tag
-[[plugins]]
-repo = 'delphinus35/typescript-vim'
-rev  = 'colorize-template-strings'
-
 #if you want to load with some conditions
 [[plugins]]
 repo = 'elzr/vim-json'
@@ -112,14 +107,16 @@ hook_add = '''
   let g:sonictemplate_vim_template_dir = '/root/.config/nvim/templates'
 '''
 
-# make rows into a list
-# ul>li* : create list
-# <C-y>d : select tag
-# <C-y>k : delete tag
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
 # surround word/line with '/"/()/{}/[] etc.
 # how to use: https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# GPT3 assist
+# this plugin depends on https://github.com/mattn/chatgpt
+# you have to set CHATGPT_API_KEY as an environment variable
+# :ChatGPT <query> -> chat with text-davinci-003, note that chat log will not be held
+# :CodeReviewPlease -> review the code
+[[plugins]]
+repo = 'zalgo3/vim-chatgpt'
+rev = 'nvim'
