@@ -226,15 +226,6 @@ RUN mkdir -m 700 $HOME/.ssh \
 COPY imgcat /usr/local/bin/imgcat
 RUN chmod +x /usr/local/bin/imgcat
 
-# copy setting files and load them
-COPY .config $HOME/.config
-
-# Concat .zshrcs
-COPY .zshrc $HOME/.zshrc_tmp
-RUN cat $HOME/.zshrc_tmp >> $HOME/.zshrc \
-    && source $HOME/.zshrc \
-    && rm $HOME/.zshrc_tmp
-
 # install go for chatGPT-cli
 # go version is the current latest version
 ENV GO_TAR_FILE go1.20.1.linux-amd64.tar.gz
@@ -245,4 +236,6 @@ RUN wget https://go.dev/dl/${GO_TAR_FILE} && \
 RUN export PATH=$PATH:/usr/local/go/bin:/root/go/bin && \
     go install github.com/mattn/chatgpt@latest
 
-# RUN nvim +qa!
+RUN npm install n -g && \
+    n stable && \
+    apt purge -y nodejs npm

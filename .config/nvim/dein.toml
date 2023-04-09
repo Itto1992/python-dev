@@ -120,3 +120,7 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'zalgo3/vim-chatgpt'
 rev = 'nvim'
+
+
+[[plugins]]
+repo = 'github/copilot.vim'

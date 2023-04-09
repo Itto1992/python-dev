@@ -9,6 +9,8 @@ services:
       - $WORK_DIR/:/root/workspace
       - $SSH_AUTH_SOCK/:/ssh-agent
       - .gitconfig:/root/.gitconfig
+      - .zshrc:/root/.zshrc
+      - .config:/root/.config
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     env_file:
