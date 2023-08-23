@@ -189,9 +189,7 @@ nnoremap <silent> <C-_> <Plug>(pydocstring)
 
 "run isort everytime you close python file
 autocmd BufWritePost *.py :!isort %
-
-"Negate bad effects of autopep8
-autocmd BufWritePost *.py :%s/@ /@/g   
+autocmd BufWritePost *.py :Black
 
 "open the last cursor position
 if has("autocmd")
@@ -209,7 +207,7 @@ command! T split | wincmd j | resize 10 | terminal zsh
 "Open terminal with insert mode (by default, open terminal with normal mode)
 autocmd TermOpen * startinsert
 
-"Create intermediate directories
+"存在しないディレクトリを指定してファイルを開いた場合に中間のディレクトリを自動で作成する
 augroup vimrc-auto-mkdir
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'))

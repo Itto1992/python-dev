@@ -24,6 +24,14 @@ hook_add = '''
   let g:pydocstring_formatter = 'google'
 '''
 
+[[plugins]]
+repo = 'psf/black'
+on_ft = 'python'
+hook_add = '''
+  let g:black_linelength = 120
+  let g:black_skip_string_normalization = 1
+'''
+
 # html
 
 # automatically close tag
