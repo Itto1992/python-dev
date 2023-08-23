@@ -95,8 +95,6 @@ hook_add = '''
 
 # tcomment_vim (easy comment out)
 # gcc: comment out or comment in the current line
-# g>c: comment out the current line
-# g<c: comment in the current line
 # gc (V mode): comment out the selected lines
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -111,16 +109,6 @@ hook_add = '''
 # how to use: https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-# GPT3 assist
-# this plugin depends on https://github.com/mattn/chatgpt
-# you have to set CHATGPT_API_KEY as an environment variable
-# :ChatGPT <query> -> chat with text-davinci-003, note that chat log will not be held
-# :CodeReviewPlease -> review the code
-[[plugins]]
-repo = 'zalgo3/vim-chatgpt'
-rev = 'nvim'
-
 
 [[plugins]]
 repo = 'github/copilot.vim'

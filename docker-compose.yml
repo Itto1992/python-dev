@@ -4,6 +4,7 @@ services:
     build:
       context: .
     image: simossyi/dev:neovim
+      # image: simossyi-new-image
     command: /bin/zsh
     volumes:
       - $WORK_DIR/:/root/workspace
