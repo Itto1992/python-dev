@@ -51,14 +51,7 @@ set smartindent
 "change the steps of tab
 augroup fileTypeIndent
     autocmd!
-    source ~/.config/nvim/autocmds/fileTypeIndent/python.vim
-    source ~/.config/nvim/autocmds/fileTypeIndent/cpp.vim
-    source ~/.config/nvim/autocmds/fileTypeIndent/vim.vim
-    source ~/.config/nvim/autocmds/fileTypeIndent/toml.vim 
-    source ~/.config/nvim/autocmds/fileTypeIndent/yaml.vim 
-    source ~/.config/nvim/autocmds/fileTypeIndent/html.vim 
-    source ~/.config/nvim/autocmds/fileTypeIndent/css.vim
-    source ~/.config/nvim/autocmds/fileTypeIndent/rust.vim
+    source ~/.config/nvim/autocmds/file_type_indent.vim
 augroup END
 
 "search settings
