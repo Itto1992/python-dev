@@ -17,6 +17,7 @@ RUN apt -y update \
     && apt -y upgrade \
     && apt -y install \
     git \
+    less \
     wget \
     zsh
 SHELL ["/bin/zsh", "-c"]

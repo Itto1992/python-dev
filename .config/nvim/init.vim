@@ -181,7 +181,7 @@ nnoremap <leader>gd :tab :G diff<CR>
 nnoremap <silent> <C-_> <Plug>(pydocstring)
 
 "run isort everytime you close python file
-autocmd BufWritePost *.py :!isort %
+autocmd BufWritePost *.py :!isort % -m 3 -l 120
 autocmd BufWritePost *.py :Black
 
 "open the last cursor position
