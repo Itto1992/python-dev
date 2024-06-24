@@ -6,7 +6,7 @@ More concretely,
 - neovim
     - with python-related plugins
 - python3.10.12
-- oh-my-zsh 
+- oh-my-zsh
 
 ## How to use
 0. Install docker & docker-compose
