@@ -14,10 +14,25 @@ flake8 = "*"
 flake8-commas = "*"
 flake8-isort = "*"
 flake8-quotes = "*"
+ipython = "*"
+jupyterlab = "*"
 pyproject-flake8 = "*"
 mypy = "*"
 neovim = "*"
 pep8-naming = "*"
+timm = "*"
+
+# linebot開発
+line-bot-sdk = "*"
+openai = "*"
+google-cloud-vision = "*"
+google-auth = "*"
+google-auth-oauthlib = "*"
+google-auth-httplib2 = "*"
+google-cloud-storage = "*"
+google-api-python-client = "*"
+llama-index = ">=0.9.38"
+oauth2client = "*"
 
 [tool.isort]
 include_trailing_comma = true

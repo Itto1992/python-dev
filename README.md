@@ -40,6 +40,7 @@ docker-compose run --rm dev
 5. Install vim packages and commit image
 
 ```
-export CONTAINER_ID=
+CONTAINER_ID=
+IMAGE_TAG=simossyi/dev:neovim
 docker commit $CONTAINER_ID $IMAGE_TAG
 ```

@@ -1,3 +1,5 @@
 .gitconfig
 .env
 .config/github-copilot
+.config/gcloud
+.jupyter

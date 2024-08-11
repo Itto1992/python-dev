@@ -104,3 +104,4 @@ export PATH=$PATH:/usr/local/go/bin:/root/go/bin
 alias vim="nvim"
 alias vi="nvim"
 alias flake8="flake8 --max-line-length=120"
+export PATH=$PATH:/root/google-cloud-sdk/bin

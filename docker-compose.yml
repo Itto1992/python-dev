@@ -1,4 +1,3 @@
-version: '3'
 services:
   dev:
     build:
@@ -12,9 +11,12 @@ services:
       - .gitconfig:/root/.gitconfig
       - .zshrc:/root/.zshrc
       - .config:/root/.config
+      - .jupyter:/root/.jupyter
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     env_file:
       - .env
     working_dir: /root/workspace
     shm_size: 8g
+    ports: 
+      - 18888:18889
