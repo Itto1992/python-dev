@@ -3,3 +3,4 @@
 .config/github-copilot
 .config/gcloud
 .jupyter
+.ssh
